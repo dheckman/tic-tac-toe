@@ -1,0 +1,22 @@
+@import 'common/variables.scss';
+@import 'common/mixins.scss';
+
+.ResetButton {
+  background-color: transparent;
+  border: 1px solid $button-border;
+  border-radius: 2%;
+  color: $button-border;
+  font-size: 18px;
+  height: 56px;
+  margin: 2em 0;
+  outline: 0;
+  padding: .75em;
+  text-decoration: none;
+  width: 180px;
+}
+
+.ResetButton:hover {
+  @include transition(background-color, .2s);
+  background-color: $button-border;
+  color: white;
+}

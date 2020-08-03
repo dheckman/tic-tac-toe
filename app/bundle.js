@@ -86,15 +86,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/components/CurrentScore.tsx":
-/*!*****************************************!*\
-  !*** ./app/components/CurrentScore.tsx ***!
-  \*****************************************/
+/***/ "./app/components/CurrentGameStatus.tsx":
+/*!**********************************************!*\
+  !*** ./app/components/CurrentGameStatus.tsx ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst CurrentScore_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/CurrentScore.module.scss */ \"./app/src/CurrentScore.module.scss\"));\nconst CurrentScore = (props) => {\n    return (react_1.default.createElement(\"div\", { className: CurrentScore_module_scss_1.default.Scores },\n        react_1.default.createElement(\"p\", null, \"Player X Score:\"),\n        react_1.default.createElement(\"p\", null, \"Player Y Score:\")));\n};\nexports.default = CurrentScore;\n\n\n//# sourceURL=webpack:///./app/components/CurrentScore.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst CurrentGameStatus_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/CurrentGameStatus.module.scss */ \"./app/src/CurrentGameStatus.module.scss\"));\nconst CurrentGameStatus = ({ gameStatus }) => {\n    return (react_1.default.createElement(\"div\", { className: CurrentGameStatus_module_scss_1.default.GameStatus },\n        \"Game Status: \",\n        gameStatus));\n};\nexports.default = CurrentGameStatus;\n\n\n//# sourceURL=webpack:///./app/components/CurrentGameStatus.tsx?");
 
 /***/ }),
 
@@ -106,7 +106,31 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst Navigation_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/Navigation.module.scss */ \"./app/src/Navigation.module.scss\"));\nconst CurrentScore_1 = __importDefault(__webpack_require__(/*! ../components/CurrentScore */ \"./app/components/CurrentScore.tsx\"));\nconst Navigation = (props) => {\n    return (react_1.default.createElement(\"nav\", { className: Navigation_module_scss_1.default.Navigation },\n        react_1.default.createElement(CurrentScore_1.default, null)));\n};\nexports.default = Navigation;\n\n\n//# sourceURL=webpack:///./app/components/Navigation.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst Navigation_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/Navigation.module.scss */ \"./app/src/Navigation.module.scss\"));\nconst Navigation = ({ playerWinCount }) => {\n    const { playerXScore, draws, playerOScore } = playerWinCount;\n    return (react_1.default.createElement(\"nav\", { className: Navigation_module_scss_1.default.Navigation },\n        react_1.default.createElement(\"p\", { className: Navigation_module_scss_1.default.NavigationPlayer },\n            \"Player X Wins: \",\n            playerXScore),\n        react_1.default.createElement(\"p\", { className: Navigation_module_scss_1.default.NavigationPlayer },\n            \"Draws: \",\n            draws),\n        react_1.default.createElement(\"p\", { className: Navigation_module_scss_1.default.NavigationPlayer },\n            \"Player 0 Wins: \",\n            playerOScore)));\n};\nexports.default = Navigation;\n\n\n//# sourceURL=webpack:///./app/components/Navigation.tsx?");
+
+/***/ }),
+
+/***/ "./app/components/ResetGame.tsx":
+/*!**************************************!*\
+  !*** ./app/components/ResetGame.tsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst ResetGame_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/ResetGame.module.scss */ \"./app/src/ResetGame.module.scss\"));\nconst ResetGame = ({ handleResetClick }) => {\n    return (react_1.default.createElement(\"button\", { \"aria-label\": \"reset game\", onClick: () => handleResetClick(), className: ResetGame_module_scss_1.default.ResetButton }, \"Reset Game\"));\n};\nexports.default = ResetGame;\n\n\n//# sourceURL=webpack:///./app/components/ResetGame.tsx?");
+
+/***/ }),
+
+/***/ "./app/components/Square.tsx":
+/*!***********************************!*\
+  !*** ./app/components/Square.tsx ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst Square_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/Square.module.scss */ \"./app/src/Square.module.scss\"));\nconst Square = ({ onClick, value }) => (react_1.default.createElement(\"button\", { className: Square_module_scss_1.default.Square, onClick: onClick, \"aria-label\": \"tic tac toe square\" }, value));\nexports.default = Square;\n\n\n//# sourceURL=webpack:///./app/components/Square.tsx?");
 
 /***/ }),
 
@@ -118,7 +142,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst Game_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/Game.module.scss */ \"./app/src/Game.module.scss\"));\nconst Navigation_1 = __importDefault(__webpack_require__(/*! ../components/Navigation */ \"./app/components/Navigation.tsx\"));\nclass Game extends react_1.default.Component {\n    constructor(props) {\n        super(props);\n        this.state = {};\n    }\n    render() {\n        return (react_1.default.createElement(\"div\", { className: Game_module_scss_1.default.App },\n            react_1.default.createElement(Navigation_1.default, null)));\n    }\n}\nexports.default = Game;\n\n\n//# sourceURL=webpack:///./app/containers/Game.tsx?");
+eval("\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];\n    result[\"default\"] = mod;\n    return result;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst Navigation_1 = __importDefault(__webpack_require__(/*! ../components/Navigation */ \"./app/components/Navigation.tsx\"));\nconst Square_1 = __importDefault(__webpack_require__(/*! ../components/Square */ \"./app/components/Square.tsx\"));\nconst CurrentGameStatus_1 = __importDefault(__webpack_require__(/*! ../components/CurrentGameStatus */ \"./app/components/CurrentGameStatus.tsx\"));\nconst ResetGame_1 = __importDefault(__webpack_require__(/*! ../components/ResetGame */ \"./app/components/ResetGame.tsx\"));\nconst Game_module_scss_1 = __importDefault(__webpack_require__(/*! ../src/Game.module.scss */ \"./app/src/Game.module.scss\"));\nconst Game = () => {\n    const [squares, setSquares] = react_1.useState(Array(9).fill(null));\n    const [isXNext, setIsXNext] = react_1.useState(true);\n    const initialScores = JSON.parse(localStorage.getItem('scores'));\n    let initialXScore;\n    let initialOScore;\n    let initialDraws;\n    if (initialScores !== null) {\n        initialXScore = initialScores.playerXWinCount;\n        initialOScore = initialScores.playerOWinCount;\n        initialDraws = initialScores.draws;\n    }\n    const [playerWinCount, setWinCount] = react_1.useState({\n        playerXScore: initialXScore || 0,\n        playerOScore: initialOScore || 0,\n        draws: initialDraws || 0,\n    });\n    const { playerXScore, playerOScore, draws } = playerWinCount;\n    react_1.useEffect(() => {\n        const scores = {\n            'playerXWinCount': playerXScore,\n            'playerOWinCount': playerOScore,\n            'draws': draws\n        };\n        return localStorage.setItem('scores', JSON.stringify(scores));\n    }, [playerWinCount]);\n    const nextPlayer = isXNext ? \"X\" : \"O\";\n    const winner = calculateWinner(squares);\n    const updateScoreTotals = () => {\n        setWinCount({\n            playerXScore: playerXScore + (winner === 'X' ? 1 : 0),\n            playerOScore: playerOScore + (winner === 'O' ? 1 : 0),\n            draws: draws + (isBoardFull(squares) ? 1 : 0)\n        });\n    };\n    react_1.useEffect(updateScoreTotals, [winner]);\n    react_1.useEffect(updateScoreTotals, [isBoardFull(squares)]);\n    function isBoardFull(squares) {\n        for (let i = 0; i < squares.length; i++) {\n            if (squares[i] == null) {\n                return false;\n            }\n        }\n        return true;\n    }\n    function renderSquare(i) {\n        return (react_1.default.createElement(Square_1.default, { value: squares[i], onClick: () => {\n                if (squares[i] != null || winner != null) {\n                    return;\n                }\n                const nextSquares = squares.slice();\n                nextSquares[i] = nextPlayer;\n                setSquares(nextSquares);\n                setIsXNext(!isXNext);\n            } }));\n    }\n    function handleResetClick() {\n        setSquares(Array(9).fill(null));\n        setIsXNext(true);\n    }\n    function getStatus() {\n        if (winner) {\n            return `The winner is: ${winner}!`;\n        }\n        else if (isBoardFull(squares)) {\n            return \"Draw!\";\n        }\n        else {\n            return `Next player: ${nextPlayer}`;\n        }\n    }\n    return (react_1.default.createElement(\"div\", { className: Game_module_scss_1.default.Game },\n        react_1.default.createElement(Navigation_1.default, { playerWinCount: playerWinCount }),\n        react_1.default.createElement(\"div\", { className: Game_module_scss_1.default.GameBoard }, Array(...Array(9)).map((v, i) => renderSquare(i))),\n        react_1.default.createElement(CurrentGameStatus_1.default, { gameStatus: getStatus() }),\n        react_1.default.createElement(ResetGame_1.default, { handleResetClick: handleResetClick })));\n};\nfunction calculateWinner(squares) {\n    const possibleRows = [\n        [0, 1, 2],\n        [3, 4, 5],\n        [6, 7, 8],\n        [0, 3, 6],\n        [1, 4, 7],\n        [2, 5, 8],\n        [0, 4, 8],\n        [2, 4, 6]\n    ];\n    for (let i = 0; i < possibleRows.length; i++) {\n        const [a, b, c] = possibleRows[i];\n        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {\n            return squares[a];\n        }\n    }\n    return null;\n}\nexports.default = Game;\n\n\n//# sourceURL=webpack:///./app/containers/Game.tsx?");
 
 /***/ }),
 
@@ -130,18 +154,18 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\"));\nconst Game_1 = __importDefault(__webpack_require__(/*! ./containers/Game */ \"./app/containers/Game.tsx\"));\nreact_dom_1.default.render(react_1.default.createElement(Game_1.default, null), document.getElementById('root'));\n\n\n//# sourceURL=webpack:///./app/index.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nconst react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\"));\nconst Game_1 = __importDefault(__webpack_require__(/*! ./containers/Game */ \"./app/containers/Game.tsx\"));\n__webpack_require__(/*! ./src/index.scss */ \"./app/src/index.scss\");\nreact_dom_1.default.render(react_1.default.createElement(Game_1.default, null), document.getElementById('root'));\n\n\n//# sourceURL=webpack:///./app/index.tsx?");
 
 /***/ }),
 
-/***/ "./app/src/CurrentScore.module.scss":
-/*!******************************************!*\
-  !*** ./app/src/CurrentScore.module.scss ***!
-  \******************************************/
+/***/ "./app/src/CurrentGameStatus.module.scss":
+/*!***********************************************!*\
+  !*** ./app/src/CurrentGameStatus.module.scss ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./CurrentScore.module.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/CurrentScore.module.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./app/src/CurrentScore.module.scss?");
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./CurrentGameStatus.module.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/CurrentGameStatus.module.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./app/src/CurrentGameStatus.module.scss?");
 
 /***/ }),
 
@@ -167,15 +191,48 @@ eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/run
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/CurrentScore.module.scss":
-/*!***********************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/CurrentScore.module.scss ***!
-  \***********************************************************************************************************************/
+/***/ "./app/src/ResetGame.module.scss":
+/*!***************************************!*\
+  !*** ./app/src/ResetGame.module.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./ResetGame.module.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/ResetGame.module.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./app/src/ResetGame.module.scss?");
+
+/***/ }),
+
+/***/ "./app/src/Square.module.scss":
+/*!************************************!*\
+  !*** ./app/src/Square.module.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./Square.module.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/Square.module.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./app/src/Square.module.scss?");
+
+/***/ }),
+
+/***/ "./app/src/index.scss":
+/*!****************************!*\
+  !*** ./app/src/index.scss ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./index.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/index.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./app/src/index.scss?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/CurrentGameStatus.module.scss":
+/*!****************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/CurrentGameStatus.module.scss ***!
+  \****************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"._3YOXeDNJ-OP3QEI96YsJoG {\\n  display: flex; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"Scores\": \"_3YOXeDNJ-OP3QEI96YsJoG\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/CurrentScore.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"._30lp_-7iH8-9Rv9GiWbg7C {\\n  display: flex;\\n  margin-top: 20px; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"GameStatus\": \"_30lp_-7iH8-9Rv9GiWbg7C\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/CurrentGameStatus.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -187,7 +244,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"body {\\n  font-family: sans-serif;\\n  margin: 0; }\\n\\n#_3eWVPDdKiuDyl6HbN5SMK0 {\\n  width: 100%; }\\n\\n._19FtpoEKipoOu8c23n3gUK {\\n  align-items: center;\\n  display: flex; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"root\": \"_3eWVPDdKiuDyl6HbN5SMK0\",\n\t\"App\": \"_19FtpoEKipoOu8c23n3gUK\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/Game.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"._1bHPmhYNBarwzng-WtpA1N {\\n  align-items: center;\\n  display: flex;\\n  flex-direction: column;\\n  width: 100%; }\\n\\n._3QZ15wcU7E5eECsCkfKQCN {\\n  align-items: center;\\n  border: 1px solid #999;\\n  display: flex;\\n  flex-wrap: wrap;\\n  justify-content: center;\\n  margin-top: 50px; }\\n\\n._3j068YM2gjd0A-MuB0C8P1 {\\n  display: flex; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"Game\": \"_1bHPmhYNBarwzng-WtpA1N\",\n\t\"GameBoard\": \"_3QZ15wcU7E5eECsCkfKQCN\",\n\t\"GameStatus\": \"_3j068YM2gjd0A-MuB0C8P1\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/Game.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -199,7 +256,43 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \".iyjfESV1NLGP6XglaDD4o {\\n  align-items: center;\\n  background-color: #ffb582;\\n  color: #032b24;\\n  display: flex;\\n  font-size: 16px;\\n  font-weight: 400;\\n  justify-content: center;\\n  position: sticky;\\n  top: 0;\\n  width: 100%; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"Navigation\": \"iyjfESV1NLGP6XglaDD4o\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/Navigation.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \".iyjfESV1NLGP6XglaDD4o {\\n  align-items: center;\\n  background-color: #ffb582;\\n  color: #032b24;\\n  display: flex;\\n  font-size: 16px;\\n  font-weight: 400;\\n  height: 50px;\\n  justify-content: space-around;\\n  position: sticky;\\n  text-transform: uppercase;\\n  top: 0;\\n  width: 100%; }\\n\\n._3GB-Somaidh3G6fhDcziWD {\\n  display: flex; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"Navigation\": \"iyjfESV1NLGP6XglaDD4o\",\n\t\"NavigationPlayer\": \"_3GB-Somaidh3G6fhDcziWD\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/Navigation.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/ResetGame.module.scss":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/ResetGame.module.scss ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"._3lUf5lLMZZvVjpBtCgdLip {\\n  background-color: transparent;\\n  border: 1px solid #ff9166;\\n  border-radius: 2%;\\n  color: #ff9166;\\n  font-size: 18px;\\n  height: 56px;\\n  margin: 2em 0;\\n  outline: 0;\\n  padding: .75em;\\n  text-decoration: none;\\n  width: 180px; }\\n\\n._3lUf5lLMZZvVjpBtCgdLip:hover {\\n  transition: background-color 0.2s ease-in-out;\\n  background-color: #ff9166;\\n  color: white; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"ResetButton\": \"_3lUf5lLMZZvVjpBtCgdLip\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/ResetGame.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/Square.module.scss":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/Square.module.scss ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \".ty4hQGWf8b8xu43wljLOq {\\n  background: #fff;\\n  border: 1px solid #999;\\n  color: #ffb582;\\n  flex: 1 1 30%;\\n  font-size: 50px;\\n  font-weight: bold;\\n  height: 100px;\\n  padding: 0;\\n  text-align: center;\\n  width: 35px; }\\n\\n.ty4hQGWf8b8xu43wljLOq:focus {\\n  background-color: #c4ece4;\\n  outline: #ffb582 auto 1px; }\\n\", \"\"]);\n// Exports\n___CSS_LOADER_EXPORT___.locals = {\n\t\"Square\": \"ty4hQGWf8b8xu43wljLOq\"\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/Square.module.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/index.scss":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/src/index.scss ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);\n// Module\n___CSS_LOADER_EXPORT___.push([module.i, \"body {\\n  font-family: sans-serif;\\n  margin: 0; }\\n\\n#root {\\n  display: flex; }\\n\", \"\"]);\n// Exports\n/* harmony default export */ __webpack_exports__[\"default\"] = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack:///./app/src/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 

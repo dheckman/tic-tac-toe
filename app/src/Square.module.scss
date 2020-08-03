@@ -1,0 +1,19 @@
+@import 'common/variables.scss';
+
+.Square {
+  background: #fff;
+  border: 1px solid #999;
+  color: $nav-bg;
+  flex: 1 1 30%;
+  font-size: 50px;
+  font-weight: bold;
+  height: 100px;
+  padding: 0;
+  text-align: center;
+  width: 35px;
+}
+
+.Square:focus {
+  background-color: $blue-bg;
+  outline: $nav-bg auto 1px;
+}

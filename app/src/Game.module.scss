@@ -1,16 +1,19 @@
-@import 'common/variables';
-@import 'common/mixins';
-
-body {
-  font-family: sans-serif;
-  margin: 0;
-}
-
-#root {
+.Game {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
-.App {
+.GameBoard {
   align-items: center;
+  border: 1px solid #999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.GameStatus {
   display: flex;
 }

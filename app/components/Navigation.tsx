@@ -1,12 +1,19 @@
 import React from 'react';
 import styles from '../src/Navigation.module.scss';
-import CurrentScore from '../components/CurrentScore';
+export interface NavigationProps {
+  playerWinCount: any,
+  playerXScore?: number,
+  playerOScore?: number,
+  draws?: number,
+}
 
-const Navigation = (props) => {
-
+const Navigation: React.FC<NavigationProps> = ({ playerWinCount }) => {
+  const { playerXScore, draws, playerOScore } = playerWinCount;
   return (
     <nav className={styles.Navigation}>
-      <CurrentScore />
+      <p className={styles.NavigationPlayer}>Player X Wins: {playerXScore}</p>
+      <p className={styles.NavigationPlayer}>Draws: {draws}</p>
+      <p className={styles.NavigationPlayer}>Player 0 Wins: {playerOScore}</p>
     </nav>
   )
 }
